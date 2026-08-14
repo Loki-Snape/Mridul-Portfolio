@@ -31,3 +31,32 @@ html, body {
   z-index: 9998;
   background: radial-gradient(ellipse at center, transparent 55%, rgba(0,0,0,0.55) 100%);
 }
+
+/* Pac-Man animation */
+@keyframes pacman-move {
+  0% { transform: translateX(0%); }
+  100% { transform: translateX(100%); }
+}
+
+.pacman-sprite {
+  width: 32px;
+  height: 32px;
+  background: #ffeb3b; /* Sega gold yellow */
+  border-radius: 50%;
+  position: relative;
+  animation: pacman-move 6s linear infinite;
+}
+
+.pacman-sprite::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 0;
+  border-top: 16px solid transparent;
+  border-bottom: 16px solid transparent;
+  border-right: 16px solid #080810; /* background color to create mouth */
+  transform: rotate(45deg);
+  transform-origin: center left;
+}

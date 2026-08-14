@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import ArcadeCanvas from './components/ArcadeCanvas';
 import ProjectCard from './components/ProjectCard';
+import SkillsMaze from './components/SkillsMaze';
+import CertificationBlocks from './components/CertificationBlocks';
 import { getProjects, getSkills, getCertifications, getExperience } from './services/api';
 import './index.css';
 
@@ -39,7 +41,13 @@ function App() {
               <ProjectCard key={project.id} project={project} />
             ))}
           </div>
-        </section>
+          </section>
+
+          {/* Skills Maze */}
+          <SkillsMaze skills={skills} />
+
+          {/* Certification Blocks */}
+          <CertificationBlocks certifications={certifications} />
       </div>
     </>
   );
