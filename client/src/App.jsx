@@ -3,6 +3,9 @@ import ArcadeCanvas from './components/ArcadeCanvas';
 import ProjectCard from './components/ProjectCard';
 import SkillsMaze from './components/SkillsMaze';
 import CertificationBlocks from './components/CertificationBlocks';
+import ExperienceSection from './components/ExperienceSection';
+import ContactTerminal from './components/ContactTerminal';
+import useKonamiCode from './hooks/useKonamiCode';
 import { getProjects, getSkills, getCertifications, getExperience } from './services/api';
 import './index.css';
 
@@ -11,7 +14,13 @@ function App() {
   const [skills, setSkills] = useState([]);
   const [certifications, setCertifications] = useState([]);
   const [experience, setExperience] = useState([]);
+  const { activated, reset } = useKonamiCode();
 
+  useEffect(() => {
+    const esc = (e) => { if (e.key === 'Escape') reset(); };
+    window.addEventListener('keydown', esc);
+    return () => window.removeEventListener('keydown', esc);
+  }, [reset]);
   useEffect(() => {
     getProjects().then(setProjects);
     getSkills().then(setSkills);
@@ -48,6 +57,21 @@ function App() {
 
           {/* Certification Blocks */}
           <CertificationBlocks certifications={certifications} />
+
+          {/* Experience Section */}
+          <ExperienceSection experience={experience} />
+
+          {/* Contact Terminal */}
+          <ContactTerminal />
+
+          {/* Konami Code Overlay */}
+          {activated && (
+            <div className="fixed inset-0 z-50 bg-crt-black bg-opacity-95 flex flex-col items-center justify-center text-center">
+              <h1 className="font-pixel text-arcade-red text-4xl mb-4">30 LIVES ADDED</h1>
+              <h2 className="font-code text-sega-gold text-2xl mb-2">CHEAT MODE UNLOCKED</h2>
+              <p className="font-hud text-gray-400">Press ESC to close</p>
+            </div>
+          )}
       </div>
     </>
   );
