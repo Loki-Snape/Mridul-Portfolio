@@ -37,13 +37,18 @@ function App() {
       <div className="min-h-screen bg-crt-black text-white reticle-cursor relative" style={{ position: 'relative', zIndex: 1 }}>
         <div className="crt-overlay" />
         <div className="crt-vignette" />
-        <h1 className="font-pixel text-sega-gold text-2xl p-8">
-          SEGA HYPER-ARCADE '96 // LOADING...
-        </h1>
+        <div className="flex items-center space-x-4 p-8">
+          <img src="/assets/images/profile-photo.jpg" alt="Profile" className="w-32 h-32 rounded-full border-4 border-sega-gold object-cover" />
+          <div>
+            <h1 className="font-pixel text-sega-gold text-3xl">Mridul Jha</h1>
+            <p className="font-hud text-gray-300 text-lg">Full-Stack Real-Time Systems & Game Engine Engineer</p>
+          </div>
+        </div>
+        
         {/* Project grid */}
         <section className="py-8 px-4">
           <h2 className="font-pixel text-sega-gold text-center text-2xl mb-6">
-            MISSION HOLODEQ // SELECT YOUR OPERATIVE
+            Projects
           </h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-6">
             {projects.map((project) => (

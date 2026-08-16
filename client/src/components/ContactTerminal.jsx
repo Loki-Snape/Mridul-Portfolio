@@ -14,9 +14,7 @@ export default function ContactTerminal() {
 
   return (
     <section className="py-8 px-4">
-      <h2 className="font-pixel text-sega-gold text-center text-2xl mb-4">
-        INSERT COIN TO TRANSMIT MESSAGE
-      </h2>
+      <h2 className="font-pixel text-sega-gold text-center text-2xl mb-4">Contact Me</h2>
       {/* Coin slot decorative */}
       <div className="bg-crt-black rounded w-48 h-12 mx-auto mb-4 flex items-center justify-center">
         <div className="bg-sega-gold w-1 h-8" />

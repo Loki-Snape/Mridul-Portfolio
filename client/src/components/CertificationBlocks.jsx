@@ -11,9 +11,7 @@ export default function CertificationBlocks({ certifications }) {
 
   return (
     <section className="py-8 px-4">
-      <h2 className="font-pixel text-sega-gold text-center text-2xl mb-4">
-        HONORS VAULT // BONUS BLOCKS
-      </h2>
+      <h2 className="font-pixel text-sega-gold text-center text-2xl mb-4">Certifications & Awards</h2>
       <div className="flex flex-wrap justify-center gap-4 mb-4">
         {certifications.map(cert => (
           <button

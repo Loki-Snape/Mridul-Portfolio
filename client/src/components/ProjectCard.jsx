@@ -61,20 +61,19 @@ const ProjectCard = ({ project }) => {
 
       {/* Links */}
       <div className="mt-3 flex space-x-4 text-sm">
-        {live_url && (
-          <a
-            href={live_url}
-            className="text-sonic-blue hover:underline"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Live
-          </a>
-        )}
+        {live_url &&            <a
+              href={live_url}
+              className="bg-crt-black border border-sonic-blue rounded px-2 py-1 hover:bg-sonic-blue hover:text-crt-black transition-colors"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Live
+            </a>
+        }
         {repo_url && (
           <a
             href={repo_url}
-            className="text-sonic-blue hover:underline"
+            className="bg-crt-black border border-sonic-blue rounded px-2 py-1 hover:bg-sonic-blue hover:text-crt-black transition-colors"
             target="_blank"
             rel="noopener noreferrer"
           >

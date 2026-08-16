@@ -3,9 +3,7 @@ import React from 'react';
 export default function ExperienceSection({ experience }) {
   return (
     <section className="py-8 px-4">
-      <h2 className="font-pixel text-sega-gold text-center text-2xl mb-4">
-        LEADERSHIP GARAGE // SELECT YOUR RIDE
-      </h2>
+      <h2 className="font-pixel text-sega-gold text-center text-2xl mb-4">Experience & Leadership</h2>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
         {experience.map((exp) => (
           <div

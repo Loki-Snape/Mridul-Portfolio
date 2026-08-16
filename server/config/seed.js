@@ -22,6 +22,8 @@ async function seed() {
         performance_score: 80,
         stress_test_hp: 100,
         display_order: 1,
+        repo_url: 'https://github.com/Loki-Snape/ironclad-command',
+        live_url: 'https://ironclad-command.vercel.app/',
       },
       {
         title: 'Shadow Syndicate',
@@ -34,6 +36,8 @@ async function seed() {
         performance_score: 75,
         stress_test_hp: 100,
         display_order: 2,
+        repo_url: 'https://github.com/Loki-Snape/shadow-syndicate',
+        live_url: 'https://shadow-syndicate.onrender.com/',
       },
       {
         title: "Jai's Arcade",
@@ -46,6 +50,7 @@ async function seed() {
         performance_score: 90,
         stress_test_hp: 100,
         display_order: 3,
+        repo_url: 'https://github.com/Loki-Snape/Jai-s-Arcade',
       },
       {
         title: 'Kinetic',
@@ -58,13 +63,15 @@ async function seed() {
         performance_score: 82,
         stress_test_hp: 100,
         display_order: 4,
+        repo_url: 'https://github.com/Loki-Snape/Kinetic',
+        live_url: null,
       },
     ];
     for (const p of projects) {
       await pool.query(
-        `INSERT INTO projects (title, slug, description, tech_stack, system_load, real_time_sync, tech_complexity, performance_score, stress_test_hp, display_order)
-         VALUES ($1,$2,$3,$4,$5,$6,$7,$8,$9,$10)`,
-        [p.title, p.slug, p.description, p.tech_stack, p.system_load, p.real_time_sync, p.tech_complexity, p.performance_score, p.stress_test_hp, p.display_order]
+        `INSERT INTO projects (title, slug, description, tech_stack, system_load, real_time_sync, tech_complexity, performance_score, stress_test_hp, display_order, repo_url, live_url)
+         VALUES ($1,$2,$3,$4,$5,$6,$7,$8,$9,$10,$11,$12)`,
+        [p.title, p.slug, p.description, p.tech_stack, p.system_load, p.real_time_sync, p.tech_complexity, p.performance_score, p.stress_test_hp, p.display_order, p.repo_url, p.live_url]
       );
     }
 
@@ -90,8 +97,14 @@ async function seed() {
 
     // Certifications data
     const certs = [
-      { title: 'National Writing Marathon', issuer: 'National Writing Marathon', description: '2nd Rank', display_order: 1 },
-      { title: 'Golden Pen Award', issuer: 'Golden Pen', description: '10th Rank', display_order: 2 },
+      { title: 'Introduction to Machine Learning', issuer: 'NPTEL', description: 'Completed May 2025', display_order: 1 },
+      { title: 'Marketing Analytics', issuer: 'NPTEL', description: 'Completed May 2026', display_order: 2 },
+      { title: 'The Bits and Bytes of Computer Networking', issuer: 'Google', description: 'Completed Aug 2025', display_order: 3 },
+      { title: 'Career Essentials in Software Development', issuer: 'Microsoft & LinkedIn', description: 'Completed May 2025', display_order: 4 },
+      { title: 'Responsive Web Design', issuer: 'freeCodeCamp', description: 'Completed Feb 2026', display_order: 5 },
+      { title: 'JavaScript', issuer: 'freeCodeCamp', description: 'Completed Jun 2026', display_order: 6 },
+      { title: 'Golden Pen Award', issuer: 'Pratilipi', description: '10th Rank — storytelling and creative writing excellence among thousands of participants', display_order: 7 },
+      { title: 'National Writing Marathon - 4', issuer: 'Pratilipi', description: '2nd Rank — narrative skills and literary creativity, nationwide competition', display_order: 8 }
     ];
     for (const c of certs) {
       await pool.query(
@@ -102,21 +115,37 @@ async function seed() {
     }
 
     // Experience data
-    await pool.query(
-      `INSERT INTO experience (role_title, organization, start_date, end_date, description, stat_speed, stat_power, stat_handling, display_order)
-       VALUES ($1,$2,$3,$4,$5,$6,$7,$8,$9)`,
-      [
-        'President',
-        'Software Development Club, VIT Bhopal',
-        '2022-01-01',
-        null,
-        'Led club initiatives and technical events',
-        85,
-        80,
-        90,
-        1,
-      ]
-    );
+    const experience = [
+      {
+        role_title: 'Data Analyst Associate Intern',
+        organization: 'Excelerate',
+        start_date: '2025-07-01',
+        end_date: '2025-08-31',
+        description: 'Analyzed large datasets for trends and actionable insights, translating findings into structured stakeholder reports.',
+        stat_speed: 75,
+        stat_power: 70,
+        stat_handling: 80,
+        display_order: 1
+      },
+      {
+        role_title: 'President, Secretary General & PR/Outreach Lead',
+        organization: 'Software Development Club, VIT Bhopal',
+        start_date: '2024-12-01',
+        end_date: '2026-05-10',
+        description: 'Led technical initiatives and coding bootcamps while managing club operations, cross-department coordination, and external outreach.',
+        stat_speed: 85,
+        stat_power: 80,
+        stat_handling: 90,
+        display_order: 2
+      }
+    ];
+    for (const e of experience) {
+      await pool.query(
+        `INSERT INTO experience (role_title, organization, start_date, end_date, description, stat_speed, stat_power, stat_handling, display_order)`
+        + ` VALUES ($1,$2,$3,$4,$5,$6,$7,$8,$9)`,
+        [e.role_title, e.organization, e.start_date, e.end_date, e.description, e.stat_speed, e.stat_power, e.stat_handling, e.display_order]
+      );
+    }
 
     console.log('Seed complete');
   } catch (err) {

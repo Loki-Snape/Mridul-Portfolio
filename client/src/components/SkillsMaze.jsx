@@ -9,9 +9,7 @@ const categoryColors = {
 export default function SkillsMaze({ skills }) {
   return (
     <section className="py-8 px-4">
-      <h2 className="font-pixel text-sega-gold text-center text-2xl mb-4">
-        SKILL MAZE // POWER PELLETS
-      </h2>
+      <h2 className="font-pixel text-sega-gold text-center text-2xl mb-4">Skills</h2>
       <div className="relative flex justify-center mb-4 h-10">
         <div className="pacman-sprite"></div>
       </div>
