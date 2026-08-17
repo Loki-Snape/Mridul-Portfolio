@@ -1,6 +1,6 @@
 # Mridul Jha — SEGA Hyper-Arcade Portfolio
 
-A 1990s SEGA arcade / House of the Dead themed developer portfolio. Every section is built as a tribute to a specific classic game — Bloody Roar 2, Galaxian, Pac-Man, Super Mario, Tetris, Road Rash, Need for Speed: Most Wanted, Donkey Kong, Minecraft, Plants vs Zombies, and Mortal Kombat all make an appearance, alongside a full Konami Code easter-egg terminal.
+A 1990s SEGA arcade / House of the Dead themed developer portfolio. Every section is built as a tribute to a specific classic game — Bloody Roar 2, Galaxian, Pac-Man, Super Mario, Tetris, Road Rash, Need for Speed: Most Wanted, Donkey Kong, Minecraft, Plants vs Zombies, and Mortal Kombat all make an appearance, alongside a custom Sega House of the Dead (THOTD) crosshair cursor, a Sonic Ring bait-and-blast interaction, and a full Konami Code easter-egg terminal.
 
 Live site: https://mridul-portfolio-red.vercel.app Backend API: https://mridul-portfolio-ioq9.onrender.com Repo: github.com/Loki-Snape/Mridul-Portfolio
 
@@ -81,7 +81,7 @@ Codolio was dropped as a live-tracked source — it has no public API, and scrap
 ## Easter Eggs
 Built across four rounds, plus the Konami Code terminal that predates all of them:
 - **Global (not inside the terminal)**:
-  - **Minesweeper Bait-and-Blast**: a small, deliberately tempting glowing "bonus orb" is hidden somewhere on the normal page. Clicking it swaps to a Minesweeper bomb, then the entire page slowly fades/dissolves to black — no jarring instant blank, no hint text. Typing `HESOYAM` (the classic GTA cheat) anywhere reverses the fade and restores the page.
+  - **Minesweeper Bait-and-Blast**: a small, deliberately tempting glowing Sonic Ring is hidden somewhere on the normal page as bait. Clicking it swaps to a Minesweeper bomb, then the entire page slowly fades/dissolves to black — no jarring instant blank, no hint text. Typing `HESOYAM` (the classic GTA cheat) anywhere reverses the fade and restores the page.
 - **Inside the Konami Code terminal**:
   - **SEGA** — plays the SEGA startup chime and briefly flashes a centered "MRIDUL JHA" logo, then disappears.
   - **PONG** — launches a small playable Pong game inside the terminal (player controls the left paddle with arrow keys, a basic imperfect CPU controls the right paddle). Winning shows a brief "YOU WIN" message and returns to the idle terminal. Losing triggers a Minecraft creeper — the creeper face scales up rapidly with a screen shake, then the entire terminal "blasts" closed, dropping the user back to the normal portfolio. The terminal fully resets its internal state on close, so reopening it always starts fresh.
@@ -144,7 +144,7 @@ loki-portfolio/
 │   │   │   ├── ExperienceRoadRash.jsx  # Road Rash themed experience
 │   │   │   ├── ExperienceSection.jsx   # Experience timeline
 │   │   │   ├── GalaxianSocials.jsx     # Galaxian ship social links
-│   │   │   ├── GlobalEasterEggs.jsx    # Minesweeper orb & sfx state manager
+│   │   │   ├── GlobalEasterEggs.jsx    # Minesweeper Sonic Ring & sfx state manager
 │   │   │   ├── KonamiTerminal.jsx      # Retro Pong terminal & creeper blast
 │   │   │   ├── LeaderboardSection.jsx  # Dynamic statistics list
 │   │   │   ├── ProjectCard.jsx         # Card component for projects
