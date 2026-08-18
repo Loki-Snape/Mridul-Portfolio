@@ -6,8 +6,11 @@ import CertificationBlocks from './components/CertificationBlocks';
 import ExperienceSection from './components/ExperienceSection';
 import ContactTerminal from './components/ContactTerminal';
 import useKonamiCode from './hooks/useKonamiCode';
+
+
 import { getProjects, getSkills, getCertifications, getExperience } from './services/api';
 import './index.css';
+import ReticleCursor from './components/ReticleCursor';
 
 function App() {
   const [projects, setProjects] = useState([]);
@@ -15,6 +18,7 @@ function App() {
   const [certifications, setCertifications] = useState([]);
   const [experience, setExperience] = useState([]);
   const { activated, reset } = useKonamiCode();
+
 
   useEffect(() => {
     const esc = (e) => { if (e.key === 'Escape') reset(); };
@@ -30,6 +34,7 @@ function App() {
 
   return (
     <>
+      <ReticleCursor />
       {/* 3D background canvas */}
       <ArcadeCanvas />
 
@@ -40,22 +45,25 @@ function App() {
         <div className="flex items-center space-x-4 p-8">
           <img src="/assets/images/profile-photo.jpg" alt="Profile" className="w-32 h-32 rounded-full border-4 border-sega-gold object-cover" />
           <div>
-            <h1 className="font-pixel text-sega-gold text-3xl">Mridul Jha</h1>
+            <img src="/assets/images/arcade/sega-font-logo.png" alt="Mridul Jha" className="h-12 w-auto" />
             <p className="font-hud text-gray-300 text-lg">Full-Stack Real-Time Systems & Game Engine Engineer</p>
           </div>
         </div>
         
-        {/* Project grid */}
-        <section className="py-8 px-4">
+        <section className="py-8 px-4 overflow-hidden">
           <h2 className="font-pixel text-sega-gold text-center text-2xl mb-6">
             Projects
           </h2>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-6">
-            {projects.map((project) => (
-              <ProjectCard key={project.id} project={project} />
+          <div className="flex marquee-track" style={{ width: 'fit-content', animation: 'marquee-scroll 40s linear infinite' }}>
+            {[...projects, ...projects].map((project, idx) => (
+              <div key={`${project.id}-${idx}`}
+                   className="flex-shrink-0 w-[85vw] sm:w-[480px] p-2">
+                <ProjectCard project={project} />
+              </div>
             ))}
           </div>
-          </section>
+        </section>
+
 
           {/* Skills Maze */}
           <SkillsMaze skills={skills} />
