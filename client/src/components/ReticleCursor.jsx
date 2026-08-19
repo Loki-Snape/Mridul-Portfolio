@@ -1,6 +1,6 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect } from "react";
 
-const ReticleCursor = () => {
+export default function ReticleCursor() {
   const [mouseX, setMouseX] = useState(0);
   const [mouseY, setMouseY] = useState(0);
 
@@ -9,17 +9,17 @@ const ReticleCursor = () => {
       setMouseX(e.clientX);
       setMouseY(e.clientY);
     };
-    window.addEventListener('mousemove', handleMouseMove);
+    window.addEventListener("mousemove", handleMouseMove);
     return () => {
-      window.removeEventListener('mousemove', handleMouseMove);
+      window.removeEventListener("mousemove", handleMouseMove);
     };
   }, []);
 
   const style = {
-    position: 'fixed',
-    left: mouseX - 16,
-    top: mouseY - 16,
-    pointerEvents: 'none',
+    position: "fixed",
+    left: mouseX - 40,
+    top: mouseY - 40,
+    pointerEvents: "none",
     zIndex: 10000,
   };
 
@@ -27,10 +27,8 @@ const ReticleCursor = () => {
     <img
       src="/assets/images/arcade/reticle-red.png"
       alt="reticle"
-      className="w-8 h-8"
+      className="w-20 h-20"
       style={style}
     />
   );
-};
-
-export default ReticleCursor;
+}

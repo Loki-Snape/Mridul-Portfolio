@@ -24,6 +24,7 @@ async function seed() {
         display_order: 1,
         repo_url: 'https://github.com/Loki-Snape/ironclad-command',
         live_url: 'https://ironclad-command.vercel.app/',
+        portrait_image: '/assets/images/projects/ironclad-board.png',
       },
       {
         title: 'Shadow Syndicate',
@@ -36,8 +37,9 @@ async function seed() {
         performance_score: 75,
         stress_test_hp: 100,
         display_order: 2,
-        repo_url: 'https://github.com/Loki-Snape/shadow-syndicate',
+        repo_url: 'https://github.com/Loki- Snape/shadow-syndicate',
         live_url: 'https://shadow-syndicate.onrender.com/',
+        portrait_image: '/assets/images/projects/syndicate-city.png',
       },
       {
         title: "Jai's Arcade",
@@ -51,6 +53,7 @@ async function seed() {
         stress_test_hp: 100,
         display_order: 3,
         repo_url: 'https://github.com/Loki-Snape/Jai-s-Arcade',
+        portrait_image: '/assets/images/projects/jais-arcade-logo.png',
       },
       {
         title: 'Kinetic',
@@ -65,28 +68,41 @@ async function seed() {
         display_order: 4,
         repo_url: 'https://github.com/Loki-Snape/Kinetic',
         live_url: null,
+        portrait_image: '/assets/images/projects/kinetic-kanban.png',
       },
     ];
     for (const p of projects) {
       await pool.query(
-        `INSERT INTO projects (title, slug, description, tech_stack, system_load, real_time_sync, tech_complexity, performance_score, stress_test_hp, display_order, repo_url, live_url)
-         VALUES ($1,$2,$3,$4,$5,$6,$7,$8,$9,$10,$11,$12)`,
-        [p.title, p.slug, p.description, p.tech_stack, p.system_load, p.real_time_sync, p.tech_complexity, p.performance_score, p.stress_test_hp, p.display_order, p.repo_url, p.live_url]
+        `INSERT INTO projects (title, slug, description, tech_stack, system_load, real_time_sync, tech_complexity, performance_score, stress_test_hp, display_order, repo_url, live_url, portrait_image)
+         VALUES ($1,$2,$3,$4,$5,$6,$7,$8,$9,$10,$11,$12,$13)`,
+        [p.title, p.slug, p.description, p.tech_stack, p.system_load, p.real_time_sync, p.tech_complexity, p.performance_score, p.stress_test_hp, p.display_order, p.repo_url, p.live_url, p.portrait_image]
       );
     }
 
     // Skills data
     const skills = [
-      { name: 'JavaScript', category: 'frontend', proficiency: 90, maze_position: 0, display_order: 0 },
-      { name: 'C++', category: 'backend', proficiency: 85, maze_position: 1, display_order: 1 },
-      { name: 'Node.js', category: 'backend', proficiency: 95, maze_position: 2, display_order: 2 },
-      { name: 'React', category: 'frontend', proficiency: 92, maze_position: 3, display_order: 3 },
-      { name: 'Socket.io', category: 'backend', proficiency: 88, maze_position: 4, display_order: 4 },
-      { name: 'PostgreSQL', category: 'database', proficiency: 90, maze_position: 5, display_order: 5 },
-      { name: 'Express', category: 'backend', proficiency: 89, maze_position: 6, display_order: 6 },
-      { name: 'Tailwind CSS', category: 'frontend', proficiency: 80, maze_position: 7, display_order: 7 },
-      { name: 'Git', category: 'tools', proficiency: 95, maze_position: 8, display_order: 8 },
-    ];
+      { name: 'PostgreSQL', category: 'database' },
+      { name: 'Express.js', category: 'backend' },
+      { name: 'React.js', category: 'frontend' },
+      { name: 'Node.js', category: 'backend' },
+      { name: 'JavaScript (ES6+)', category: 'frontend' },
+      { name: 'C++', category: 'other' },
+      { name: 'HTML5', category: 'frontend' },
+      { name: 'CSS3', category: 'frontend' },
+      { name: 'Python', category: 'other' },
+      { name: 'Tailwind CSS', category: 'frontend' },
+      { name: 'HTML5 Canvas', category: 'frontend' },
+      { name: 'EJS', category: 'frontend' },
+      { name: 'Bootstrap', category: 'frontend' },
+      { name: 'Socket.io / WebSockets', category: 'backend' },
+      { name: 'REST APIs', category: 'backend' },
+      { name: 'Node-Cron', category: 'backend' },
+      { name: 'SQL', category: 'database' },
+      { name: 'AWS', category: 'other' },
+      { name: 'Git', category: 'other' },
+      { name: 'Creative Writing', category: 'other' },
+    ].map((s, idx) => ({ ...s, proficiency: 85, maze_position: idx, display_order: idx }));
+
     for (const s of skills) {
       await pool.query(
         `INSERT INTO skills (name, category, proficiency, maze_position, display_order)

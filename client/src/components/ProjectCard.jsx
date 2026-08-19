@@ -24,10 +24,14 @@ const ProjectCard = ({ project }) => {
     stress_test_hp,
     live_url,
     repo_url,
+    portrait_image,
   } = project;
 
   return (
     <div className="bg-sonic-blue-dark border-2 border-sonic-blue rounded p-4 hover:shadow-arcade-glow">
+        {portrait_image && (
+          <img src={portrait_image} alt={title} className="w-full h-40 object-cover rounded mb-3 border border-sonic-blue" />
+        )}
       {/* Title */}
       <h3 className="font-pixel text-sega-gold text-xl mb-2">{title}</h3>
 

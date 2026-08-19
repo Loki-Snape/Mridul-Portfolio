@@ -45,7 +45,7 @@ function App() {
         <div className="flex items-center space-x-4 p-8">
           <img src="/assets/images/profile-photo.jpg" alt="Profile" className="w-32 h-32 rounded-full border-4 border-sega-gold object-cover" />
           <div>
-            <img src="/assets/images/arcade/sega-font-logo.png" alt="Mridul Jha" className="h-12 w-auto" />
+            <img src="/assets/images/arcade/sega-font-logo.png" alt="Mridul Jha" className="h-20 w-auto" />
             <p className="font-hud text-gray-300 text-lg">Full-Stack Real-Time Systems & Game Engine Engineer</p>
           </div>
         </div>
@@ -57,7 +57,7 @@ function App() {
           <div className="flex marquee-track" style={{ width: 'fit-content', animation: 'marquee-scroll 40s linear infinite' }}>
             {[...projects, ...projects].map((project, idx) => (
               <div key={`${project.id}-${idx}`}
-                   className="flex-shrink-0 w-[85vw] sm:w-[480px] p-2">
+                   className="flex-shrink-0 w-[75vw] sm:w-[380px] p-2">
                 <ProjectCard project={project} />
               </div>
             ))}
