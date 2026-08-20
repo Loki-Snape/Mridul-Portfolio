@@ -113,20 +113,19 @@ async function seed() {
 
     // Certifications data
     const certs = [
-      { title: 'Introduction to Machine Learning', issuer: 'NPTEL', description: 'Completed May 2025', display_order: 1 },
-      { title: 'Marketing Analytics', issuer: 'NPTEL', description: 'Completed May 2026', display_order: 2 },
-      { title: 'The Bits and Bytes of Computer Networking', issuer: 'Google', description: 'Completed Aug 2025', display_order: 3 },
-      { title: 'Career Essentials in Software Development', issuer: 'Microsoft & LinkedIn', description: 'Completed May 2025', display_order: 4 },
-      { title: 'Responsive Web Design', issuer: 'freeCodeCamp', description: 'Completed Feb 2026', display_order: 5 },
-      { title: 'JavaScript', issuer: 'freeCodeCamp', description: 'Completed Jun 2026', display_order: 6 },
-      { title: 'Golden Pen Award', issuer: 'Pratilipi', description: '10th Rank — storytelling and creative writing excellence among thousands of participants', display_order: 7 },
-      { title: 'National Writing Marathon - 4', issuer: 'Pratilipi', description: '2nd Rank — narrative skills and literary creativity, nationwide competition', display_order: 8 }
+      { title: 'Introduction to Machine Learning', issuer: 'NPTEL', description: 'Covered supervised and unsupervised learning fundamentals, model evaluation, and practical ML workflows.', date_earned: '2025-05-01', display_order: 1 },
+      { title: 'Marketing Analytics', issuer: 'NPTEL', description: 'Focused on data-driven marketing strategy, customer analytics, and campaign performance measurement.', date_earned: '2026-05-01', display_order: 2 },
+      { title: 'The Bits and Bytes of Computer Networking', issuer: 'Google', description: 'Explored networking fundamentals including TCP/IP, subnetting, and the OSI model as part of the Google IT Support path.', date_earned: '2025-08-01', display_order: 3 },
+      { title: 'Career Essentials in Software Development', issuer: 'Microsoft & LinkedIn', description: 'Covered the software development lifecycle, Agile practices, and foundational engineering career skills.', date_earned: '2025-05-01', display_order: 4 },
+      { title: 'Responsive Web Design', issuer: 'freeCodeCamp', description: 'Built responsive, accessible web layouts using HTML5, CSS3, and modern layout techniques.', date_earned: '2026-02-01', display_order: 5 },
+      { title: 'JavaScript', issuer: 'freeCodeCamp', description: 'Covered core JavaScript programming concepts including functions, algorithms, and data structures.', date_earned: '2026-06-01', display_order: 6 },
+      { title: 'Golden Pen Award', issuer: 'Pratilipi', description: '10th Rank — recognized for storytelling and creative writing excellence among thousands of participants.', date_earned: '2023-08-01', display_order: 7 },
+      { title: 'National Writing Marathon - 4', issuer: 'Pratilipi', description: '2nd Rank — recognized for narrative skills and literary creativity in a nationwide writing competition.', date_earned: '2026-07-01', display_order: 8 }
     ];
     for (const c of certs) {
       await pool.query(
-        `INSERT INTO certifications (title, issuer, description, display_order)
-         VALUES ($1,$2,$3,$4)`,
-        [c.title, c.issuer, c.description, c.display_order]
+        `INSERT INTO certifications (title, issuer, description, date_earned, display_order) VALUES ($1,$2,$3,$4,$5)`,
+        [c.title, c.issuer, c.description, c.date_earned, c.display_order]
       );
     }
 
