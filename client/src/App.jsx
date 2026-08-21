@@ -6,6 +6,8 @@ import CertificationBlocks from './components/CertificationBlocks';
 import ExperienceSection from './components/ExperienceSection';
 import ContactTerminal from './components/ContactTerminal';
 import useKonamiCode from './hooks/useKonamiCode';
+import AboutSection from './components/AboutSection';
+import TetrisAboutReveal from './components/TetrisAboutReveal';
 
 
 import { getProjects, getSkills, getCertifications, getExperience } from './services/api';
@@ -50,7 +52,10 @@ function App() {
           </div>
         </div>
         
-        <section className="py-8 px-4 overflow-hidden">
+        <TetrisAboutReveal>
+            <AboutSection />
+          </TetrisAboutReveal>
+          <section className="py-8 px-4 overflow-hidden">
           <h2 className="font-pixel text-sega-gold text-center text-2xl mb-6">
             Projects
           </h2>
