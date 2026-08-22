@@ -3,7 +3,7 @@ import ArcadeCanvas from './components/ArcadeCanvas';
 import ProjectCard from './components/ProjectCard';
 import SkillsMaze from './components/SkillsMaze';
 import CertificationBlocks from './components/CertificationBlocks';
-import ExperienceSection from './components/ExperienceSection';
+import ExperienceRoadRash from './components/ExperienceRoadRash';
 import ContactTerminal from './components/ContactTerminal';
 import useKonamiCode from './hooks/useKonamiCode';
 import AboutSection from './components/AboutSection';
@@ -77,7 +77,7 @@ function App() {
           <CertificationBlocks certifications={certifications} />
 
           {/* Experience Section */}
-          <ExperienceSection experience={experience} />
+          <ExperienceRoadRash experience={experience} />
 
           {/* Contact Terminal */}
           <ContactTerminal />

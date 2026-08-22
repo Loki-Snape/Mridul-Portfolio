@@ -143,15 +143,48 @@ async function seed() {
         display_order: 1
       },
       {
-        role_title: 'President, Secretary General & PR/Outreach Lead',
+        role_title: 'PR & Outreach Lead',
         organization: 'Software Development Club, VIT Bhopal',
         start_date: '2024-12-01',
-        end_date: '2026-05-10',
-        description: 'Led technical initiatives and coding bootcamps while managing club operations, cross-department coordination, and external outreach.',
+        end_date: '2025-05-31',
+        description: 'Managed external outreach and public relations initiatives for the club.',
+        stat_speed: 80,
+        stat_power: 75,
+        stat_handling: 85,
+        display_order: 2
+      },
+      {
+        role_title: 'Secretary General',
+        organization: 'Software Development Club, VIT Bhopal',
+        start_date: '2025-06-01',
+        end_date: '2025-12-31',
+        description: 'Oversaw club administration, cross-department coordination, and event logistics.',
+        stat_speed: 82,
+        stat_power: 78,
+        stat_handling: 88,
+        display_order: 3
+      },
+      {
+        role_title: 'President',
+        organization: 'Software Development Club, VIT Bhopal',
+        start_date: '2026-01-01',
+        end_date: '2026-05-31',
+        description: 'Led technical initiatives and coding bootcamps as head of the club.',
         stat_speed: 85,
         stat_power: 80,
         stat_handling: 90,
-        display_order: 2
+        display_order: 4
+      },
+      {
+        role_title: 'Writer',
+        organization: 'Pratilipi',
+        start_date: '2022-01-01',
+        end_date: null,
+        description: 'Award-winning creative writer publishing narrative fiction and building audience engagement on the platform.',
+        stat_speed: 70,
+        stat_power: 75,
+        stat_handling: 80,
+        display_order: 5
       }
     ];
     for (const e of experience) {
