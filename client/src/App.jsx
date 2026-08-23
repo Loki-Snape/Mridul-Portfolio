@@ -8,6 +8,7 @@ import ContactTerminal from './components/ContactTerminal';
 import useKonamiCode from './hooks/useKonamiCode';
 import AboutSection from './components/AboutSection';
 import TetrisAboutReveal from './components/TetrisAboutReveal';
+import EducationBeastMorph from './components/EducationBeastMorph';
 
 
 import { getProjects, getSkills, getCertifications, getExperience } from './services/api';
@@ -53,6 +54,7 @@ function App() {
         </div>
         
         <TetrisAboutReveal>
+
             <AboutSection />
           </TetrisAboutReveal>
           <section className="py-8 px-4 overflow-hidden">
@@ -77,7 +79,8 @@ function App() {
           <CertificationBlocks certifications={certifications} />
 
           {/* Experience Section */}
-          <ExperienceRoadRash experience={experience} />
+            <ExperienceRoadRash experience={experience} />
+            <EducationBeastMorph />
 
           {/* Contact Terminal */}
           <ContactTerminal />
