@@ -9,7 +9,7 @@ import useKonamiCode from './hooks/useKonamiCode';
 import AboutSection from './components/AboutSection';
 import TetrisAboutReveal from './components/TetrisAboutReveal';
 import EducationBeastMorph from './components/EducationBeastMorph';
-
+import GalaxianSocials from './components/GalaxianSocials';
 
 import { getProjects, getSkills, getCertifications, getExperience } from './services/api';
 import './index.css';
@@ -52,19 +52,19 @@ function App() {
             <p className="font-hud text-gray-300 text-lg">Full-Stack Real-Time Systems & Game Engine Engineer</p>
           </div>
         </div>
-        
+
         <TetrisAboutReveal>
 
-            <AboutSection />
-          </TetrisAboutReveal>
-          <section className="py-8 px-4 overflow-hidden">
+          <AboutSection />
+        </TetrisAboutReveal>
+        <section className="py-8 px-4 overflow-hidden">
           <h2 className="font-pixel text-sega-gold text-center text-2xl mb-6">
             Projects
           </h2>
           <div className="flex marquee-track" style={{ width: 'fit-content', animation: 'marquee-scroll 40s linear infinite' }}>
             {[...projects, ...projects].map((project, idx) => (
               <div key={`${project.id}-${idx}`}
-                   className="flex-shrink-0 w-[75vw] sm:w-[380px] p-2">
+                className="flex-shrink-0 w-[75vw] sm:w-[380px] p-2">
                 <ProjectCard project={project} />
               </div>
             ))}
@@ -72,27 +72,29 @@ function App() {
         </section>
 
 
-          {/* Skills Maze */}
-          <SkillsMaze skills={skills} />
+        {/* Skills Maze */}
+        <SkillsMaze skills={skills} />
 
-          {/* Certification Blocks */}
-          <CertificationBlocks certifications={certifications} />
+        {/* Certification Blocks */}
+        <CertificationBlocks certifications={certifications} />
 
-          {/* Experience Section */}
-            <ExperienceRoadRash experience={experience} />
-            <EducationBeastMorph />
+        {/* Experience Section */}
+        <ExperienceRoadRash experience={experience} />
+        {/* Education Beast Morph */}
+        <EducationBeastMorph />
+        {/* Galaxian Socials */}
+        <GalaxianSocials />
+        {/* Contact Terminal */}
+        <ContactTerminal />
 
-          {/* Contact Terminal */}
-          <ContactTerminal />
-
-          {/* Konami Code Overlay */}
-          {activated && (
-            <div className="fixed inset-0 z-50 bg-crt-black bg-opacity-95 flex flex-col items-center justify-center text-center">
-              <h1 className="font-pixel text-arcade-red text-4xl mb-4">30 LIVES ADDED</h1>
-              <h2 className="font-code text-sega-gold text-2xl mb-2">CHEAT MODE UNLOCKED</h2>
-              <p className="font-hud text-gray-400">Press ESC to close</p>
-            </div>
-          )}
+        {/* Konami Code Overlay */}
+        {activated && (
+          <div className="fixed inset-0 z-50 bg-crt-black bg-opacity-95 flex flex-col items-center justify-center text-center">
+            <h1 className="font-pixel text-arcade-red text-4xl mb-4">30 LIVES ADDED</h1>
+            <h2 className="font-code text-sega-gold text-2xl mb-2">CHEAT MODE UNLOCKED</h2>
+            <p className="font-hud text-gray-400">Press ESC to close</p>
+          </div>
+        )}
       </div>
     </>
   );
