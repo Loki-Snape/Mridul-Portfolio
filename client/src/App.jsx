@@ -4,7 +4,7 @@ import ProjectCard from './components/ProjectCard';
 import SkillsMaze from './components/SkillsMaze';
 import CertificationBlocks from './components/CertificationBlocks';
 import ExperienceRoadRash from './components/ExperienceRoadRash';
-import ContactTerminal from './components/ContactTerminal';
+import ContactCoinSlot from './components/ContactCoinSlot';
 import useKonamiCode from './hooks/useKonamiCode';
 import AboutSection from './components/AboutSection';
 import TetrisAboutReveal from './components/TetrisAboutReveal';
@@ -85,7 +85,7 @@ function App() {
         {/* Galaxian Socials */}
         <GalaxianSocials />
         {/* Contact Terminal */}
-        <ContactTerminal />
+        <ContactCoinSlot />
 
         {/* Konami Code Overlay */}
         {activated && (

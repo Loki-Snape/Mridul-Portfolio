@@ -79,7 +79,7 @@ export default function GalaxianSocials() {
         </a>
       ))}
       <img src="/assets/images/socials/galaxian-ship.png" alt="Player" style={playerStyle} />
-      <style jsx>{`
+      <style>{`
         @keyframes drift {
           from { transform: translateX(-10px); }
           to { transform: translateX(10px); }
