@@ -46,3 +46,13 @@ export async function getExperience() {
     return [];
   }
 }
+
+export async function getStats() {
+  try {
+    const response = await api.get('/stats');
+    return response.data;
+  } catch (error) {
+    console.error('Error fetching stats:', error);
+    return null;
+  }
+}

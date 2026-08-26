@@ -10,6 +10,7 @@ import AboutSection from './components/AboutSection';
 import TetrisAboutReveal from './components/TetrisAboutReveal';
 import EducationBeastMorph from './components/EducationBeastMorph';
 import GalaxianSocials from './components/GalaxianSocials';
+import LeaderboardSection from './components/LeaderboardSection';
 
 import { getProjects, getSkills, getCertifications, getExperience } from './services/api';
 import './index.css';
@@ -77,6 +78,9 @@ function App() {
 
         {/* Certification Blocks */}
         <CertificationBlocks certifications={certifications} />
+
+        {/* Leaderboard Section */}
+        <LeaderboardSection />
 
         {/* Experience Section */}
         <ExperienceRoadRash experience={experience} />
