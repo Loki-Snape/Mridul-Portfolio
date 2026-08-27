@@ -75,13 +75,7 @@ export default function EducationBeastMorph() {
   return (
     <section className="py-8 px-4">
       {/* Section heading – Sega Gold, Press Start 2P */}
-      <h2
-        className="text-center text-2xl mb-6"
-        style={{
-          color: "#FFD700",
-          fontFamily: "'Press Start 2P', cursive",
-        }}
-      >
+      <h2 className="font-pixel text-sega-gold text-center text-2xl mb-6">
         Education
       </h2>
 

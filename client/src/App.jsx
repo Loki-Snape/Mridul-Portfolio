@@ -11,6 +11,7 @@ import TetrisAboutReveal from './components/TetrisAboutReveal';
 import EducationBeastMorph from './components/EducationBeastMorph';
 import GalaxianSocials from './components/GalaxianSocials';
 import LeaderboardSection from './components/LeaderboardSection';
+import GlobalEasterEggs from './components/GlobalEasterEggs';
 
 import { getProjects, getSkills, getCertifications, getExperience } from './services/api';
 import './index.css';
@@ -39,11 +40,12 @@ function App() {
   return (
     <>
       <ReticleCursor />
+      <GlobalEasterEggs />
       {/* 3D background canvas */}
       <ArcadeCanvas />
 
       {/* Main UI layer */}
-      <div className="min-h-screen bg-crt-black text-white reticle-cursor relative" style={{ position: 'relative', zIndex: 1 }}>
+      <div id="app-main-ui-layer" className="min-h-screen bg-crt-black text-white reticle-cursor relative transition-all duration-[1800ms] ease-in-out" style={{ position: 'relative', zIndex: 1 }}>
         <div className="crt-overlay" />
         <div className="crt-vignette" />
         <div className="flex items-center space-x-4 p-8">
