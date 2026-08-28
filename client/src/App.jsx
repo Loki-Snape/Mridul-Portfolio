@@ -12,6 +12,7 @@ import EducationBeastMorph from './components/EducationBeastMorph';
 import GalaxianSocials from './components/GalaxianSocials';
 import LeaderboardSection from './components/LeaderboardSection';
 import GlobalEasterEggs from './components/GlobalEasterEggs';
+import KonamiTerminal from './components/KonamiTerminal';
 
 import { getProjects, getSkills, getCertifications, getExperience } from './services/api';
 import './index.css';
@@ -94,13 +95,7 @@ function App() {
         <ContactCoinSlot />
 
         {/* Konami Code Overlay */}
-        {activated && (
-          <div className="fixed inset-0 z-50 bg-crt-black bg-opacity-95 flex flex-col items-center justify-center text-center">
-            <h1 className="font-pixel text-arcade-red text-4xl mb-4">30 LIVES ADDED</h1>
-            <h2 className="font-code text-sega-gold text-2xl mb-2">CHEAT MODE UNLOCKED</h2>
-            <p className="font-hud text-gray-400">Press ESC to close</p>
-          </div>
-        )}
+        <KonamiTerminal activated={activated} onClose={reset} />
       </div>
     </>
   );
