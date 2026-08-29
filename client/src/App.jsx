@@ -95,7 +95,7 @@ function App() {
         <ContactCoinSlot />
 
         {/* Konami Code Overlay */}
-        <KonamiTerminal activated={activated} onClose={reset} />
+        {activated && <KonamiTerminal activated={activated} onClose={reset} />}
       </div>
     </>
   );

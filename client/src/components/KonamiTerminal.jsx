@@ -207,6 +207,13 @@ export default function KonamiTerminal({ activated, onClose }) {
     }
   }, [activeMode]);
 
+  // Reset activeMode state back to normal/idle when terminal closes
+  useEffect(() => {
+    if (!activated) {
+      setActiveMode('normal');
+    }
+  }, [activated]);
+
   if (!activated) return null;
 
   return (
