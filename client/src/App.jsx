@@ -13,6 +13,7 @@ import GalaxianSocials from './components/GalaxianSocials';
 import LeaderboardSection from './components/LeaderboardSection';
 import GlobalEasterEggs from './components/GlobalEasterEggs';
 import KonamiTerminal from './components/KonamiTerminal';
+import AmbientDonkeyKong from './components/AmbientDonkeyKong';
 
 import { getProjects, getSkills, getCertifications, getExperience } from './services/api';
 import './index.css';
@@ -42,6 +43,7 @@ function App() {
     <>
       <ReticleCursor />
       <GlobalEasterEggs />
+      <AmbientDonkeyKong />
       {/* 3D background canvas */}
       <ArcadeCanvas />
 
