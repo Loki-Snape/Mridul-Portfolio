@@ -34,9 +34,8 @@ export default function PvZLoadingScreen({ onComplete }) {
 
   return (
     <div
-      className={`fixed inset-0 bg-[#080810] z-50 flex flex-col justify-center items-center select-none overflow-hidden ${
-        phase === 'fade' ? 'animate-overlay-fade' : ''
-      }`}
+      className={`fixed inset-0 bg-[#080810] z-50 flex flex-col justify-center items-center select-none overflow-hidden ${phase === 'fade' ? 'animate-overlay-fade' : ''
+        }`}
     >
       <style>{`
         /* Pea travel animation (1.5s linear) */
@@ -70,7 +69,7 @@ export default function PvZLoadingScreen({ onComplete }) {
 
       {/* Loading Scene Frame */}
       <div className="relative w-[480px] max-w-[90vw] h-64 flex flex-col justify-end pb-8">
-        
+
         {/* Simple Ground Line */}
         <div className="absolute bottom-8 left-0 right-0 border-b-2 border-stone-800/80" />
 
@@ -86,15 +85,14 @@ export default function PvZLoadingScreen({ onComplete }) {
         {/* The Pea (Fires during fire phase, aligned to mouth height) */}
         {phase === 'fire' && (
           <div
-            className="absolute bottom-[102px] w-4 h-4 bg-green-500 rounded-full border-2 border-green-700 shadow-[0_0_6px_rgba(34,197,94,0.6)] animate-pea z-20"
+            className="absolute bottom-[80px] w-4 h-4 bg-green-500 rounded-full border-2 border-green-700 shadow-[0_0_6px_rgba(34,197,94,0.6)] animate-pea z-20"
           />
         )}
 
         {/* Zombie (Right side) */}
         <div
-          className={`absolute right-4 bottom-8 w-20 h-24 flex items-center justify-center ${
-            phase === 'hit' ? 'animate-zombie-hit' : ''
-          }`}
+          className={`absolute right-4 bottom-8 w-20 h-24 flex items-center justify-center ${phase === 'hit' ? 'animate-zombie-hit' : ''
+            }`}
         >
           <img
             src="/assets/images/games/zombie.webp"
