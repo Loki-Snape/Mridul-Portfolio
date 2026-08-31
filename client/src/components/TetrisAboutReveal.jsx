@@ -36,13 +36,15 @@ const PIECES = [
   { id: "I", colorClass: "bg-sega-gold", cells: I_CELLS },
 ];
 
-export default function TetrisAboutReveal({ children }) {
+export default function TetrisAboutReveal({ children, startReveal = true }) {
   const [staticCells] = useState(buildStaticCells);
   const [currentIndex, setCurrentIndex] = useState(0);
   const [clearing, setClearing] = useState(false);
   const [done, setDone] = useState(false);
 
   useEffect(() => {
+    if (!startReveal) return;
+
     const dropInterval = 700;
     let i = 0;
     const dropTimer = setInterval(() => {
@@ -55,7 +57,7 @@ export default function TetrisAboutReveal({ children }) {
       }
     }, dropInterval);
     return () => clearInterval(dropTimer);
-  }, []);
+  }, [startReveal]);
 
   return (
     <section className="relative py-8 px-4">

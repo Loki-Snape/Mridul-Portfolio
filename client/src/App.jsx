@@ -14,6 +14,7 @@ import LeaderboardSection from './components/LeaderboardSection';
 import GlobalEasterEggs from './components/GlobalEasterEggs';
 import KonamiTerminal from './components/KonamiTerminal';
 import AmbientDonkeyKong from './components/AmbientDonkeyKong';
+import PvZLoadingScreen from './components/PvZLoadingScreen';
 
 import { getProjects, getSkills, getCertifications, getExperience } from './services/api';
 import './index.css';
@@ -25,6 +26,7 @@ function App() {
   const [certifications, setCertifications] = useState([]);
   const [experience, setExperience] = useState([]);
   const { activated, reset } = useKonamiCode();
+  const [loading, setLoading] = useState(true);
 
 
   useEffect(() => {
@@ -41,6 +43,7 @@ function App() {
 
   return (
     <>
+      {loading && <PvZLoadingScreen onComplete={() => setLoading(false)} />}
       <ReticleCursor />
       <GlobalEasterEggs />
       <AmbientDonkeyKong />
@@ -59,7 +62,7 @@ function App() {
           </div>
         </div>
 
-        <TetrisAboutReveal>
+        <TetrisAboutReveal startReveal={!loading}>
 
           <AboutSection />
         </TetrisAboutReveal>
