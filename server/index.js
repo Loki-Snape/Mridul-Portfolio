@@ -12,6 +12,23 @@ app.get('/api/health', (req, res) => {
   res.json({ status: 'ok' });
 });
 
+// Protected stats fetch endpoint
+app.get('/api/fetch-stats', async (req, res) => {
+  const key = req.query.key;
+  if (!key || key !== process.env.STATS_CRON_SECRET) {
+    return res.status(401).json({ error: 'Unauthorized' });
+  }
+
+  try {
+    const runFetchJob = require('./jobs/fetchStats');
+    await runFetchJob();
+    res.json({ success: true, message: 'Stats synchronized successfully' });
+  } catch (err) {
+    console.error('Error running stats sync job via endpoint:', err);
+    res.status(500).json({ error: 'Internal server error' });
+  }
+});
+
 // Routes
 app.use('/api/projects', require('./routes/projects'));
 app.use('/api/skills', require('./routes/skills'));
